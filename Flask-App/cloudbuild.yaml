@@ -1,0 +1,18 @@
+steps:
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['build', '-t', 'gcr.io/$PROJECT_ID/flask-mongo-app', '.']
+
+  - name: 'gcr.io/cloud-builders/docker'
+    args: ['push', 'gcr.io/$PROJECT_ID/flask-mongo-app']
+
+  - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
+    entrypoint: gcloud
+    args:
+      [
+        'run', 'deploy', 'flask-mongo-app',
+        '--image', 'gcr.io/$PROJECT_ID/flask-mongo-app',
+        '--region', 'us-west2',
+        '--platform', 'managed',
+        '--allow-unauthenticated',
+        '--set-env-vars', 'MONGO_URI=mongodb+srv://omar:MongoDemo2025!@multi-cloud-demo.1ntzypb.mongodb.net/?retryWrites=true&w=majority&appName=multi-cloud-demo'
+      ]
