@@ -14,5 +14,5 @@ steps:
         '--region', 'us-west2',
         '--platform', 'managed',
         '--allow-unauthenticated',
-        '--set-env-vars', 'MONGO_URI=mongodb+srv://omar:MongoDemo2025!@multi-cloud-demo.1ntzypb.mongodb.net/?retryWrites=true&w=majority&appName=multi-cloud-demo'
+        '--set-env-vars', 'MONGO_URI=${_MONGO_URI}'
       ]
