@@ -132,6 +132,10 @@ Project-02-MongoDB-Atlas-Multi-Cloud-Deployment/
 ├── README.md
 ├── .gitignore
 ```
+---
+
+## 📘 Full Documentation  
+👉 [View complete implementation walkthrough on sedky.net](https://sedky.net/project2-multicloud-mongodb.html)
 
 ---
 
